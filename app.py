@@ -4,16 +4,19 @@ import backend
 
 def get_selected_row(event):
     global selected_tuple
-    index = list1.curselection()[0]
-    selected_tuple = list1.get(index)
-    entry_1.delete(0, END)
-    entry_1.insert(END, selected_tuple[1])
-    entry_2.delete(0, END)
-    entry_2.insert(END, selected_tuple[2])
-    entry_3.delete(0, END)
-    entry_3.insert(END, selected_tuple[3])
-    entry_4.delete(0, END)
-    entry_4.insert(END, selected_tuple[4])
+    try:
+        index = list1.curselection()[0]
+        selected_tuple = list1.get(index)
+        entry_1.delete(0, END)
+        entry_1.insert(END, selected_tuple[1])
+        entry_2.delete(0, END)
+        entry_2.insert(END, selected_tuple[2])
+        entry_3.delete(0, END)
+        entry_3.insert(END, selected_tuple[3])
+        entry_4.delete(0, END)
+        entry_4.insert(END, selected_tuple[4])
+    except IndexError:
+        pass
 
 
 
